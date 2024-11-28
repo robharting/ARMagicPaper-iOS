@@ -59,11 +59,11 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         let node = SCNNode()
         
         if let imageAnchor = anchor as? ARImageAnchor {
-            
-                                  
+                                              
             // what image did we detect
             print(imageAnchor.referenceImage.name!)
             
+            //video part
             let videoNode = SKVideoNode(fileNamed: "harrypotter.mp4")
             videoNode.play()
             
@@ -76,6 +76,8 @@ class ViewController: UIViewController, ARSCNViewDelegate {
             videoNode.yScale = -1.0
             
             videoScene.addChild(videoNode)
+            
+            
             
             let plane = SCNPlane(width: imageAnchor.referenceImage.physicalSize.width, height: imageAnchor.referenceImage.physicalSize.height)
             
